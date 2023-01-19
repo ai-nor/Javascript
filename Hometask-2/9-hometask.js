@@ -16,67 +16,42 @@ let km = metr/1000;
 let namem = "метр";
 let namekm = "кілометр";
 
-let convertm = metr.toString();
-let convertkm = km.toString();
 
-let lastm = convertm[convertm.length-1]; 
-let lastkm = convertkm[convertkm.length-1]; 
+function lastChar(value) {
+let convert = value.toString();
 
+let last = convert[convert.length-1]; 
 
-if (!Number.isInteger(metr)) {
-    endm = "а";
+if (!Number.isInteger(value)) {
+    ending = "а";
 }
-else if (convertm.length ==1 && lastm == 1) {
-    endm = "";
+else if (convert.length ==1 && last == 1) {
+    ending = "";
 }
-else if ((convertm.length ===1) && (lastm == 2 || lastm == 3 || lastm == 4 )) {
-    endm = "и";
+else if ((convert.length ===1) && (last == 2 || last == 3 || last == 4 )) {
+    ending = "и";
 }
-else if ((convertm.length ===1) && (lastm == 5 || lastm == 6 || lastm == 7 || lastm == 8 || lastm == 9)) {
-    endm = "ів";
+else if ((convert.length ===1) && (last == 5 || last == 6 || last == 7 || last == 8 || last == 9)) {
+    ending = "ів";
 }
-else if (convertm.length ===2 && convertm[convertm.length-2] == 1) {
-    endm = "ів";
+else if (convert.length ===2 && convert[convert.length-2] == 1) {
+    ending = "ів";
 }
-else if (convertm.length >=2 && lastm == 1) {
-    endm = "";
+else if (convert.length >=2 && last == 1) {
+    ending = "";
 }
-else if ((convertm.length >=2) && (lastm == 2 || lastm == 3 || lastm == 4 )) {
-    endm = "и";
+else if ((convert.length >=2) && (last == 2 || last == 3 || last == 4 )) {
+    ending = "и";
 }
-else if ((convertm.length >=2) && (lastm == 5 || lastm == 6 || lastm == 7 || lastm == 8 || lastm == 9)) {
-    endm = "ів";
+else if ((convert.length >=2) && (last == 5 || last == 6 || last == 7 || last == 8 || last == 9)) {
+    ending = "ів";
 }
 else {
     console.log ("Щось не врахувала");
 }
-
-if (!Number.isInteger(km)) {
-    endkm = "а";
-}
-else if (convertkm.length ==1 && lastkm == 1) {
-    endkm = "";
-}
-else if ((convertkm.length ===1) && (lastkm == 2 || lastkm == 3 || lastkm == 4 )) {
-    endkm = "и";
-}
-else if ((convertkm.length ===1) && (lastkm == 5 || lastkm == 6 || lastkm == 7 || lastkm == 8 || lastkm == 9)) {
-    endkm = "ів";
-}
-else if (convertkm.length ===2 && convertkm[convertkm.length-2] == 1) {
-    endkm = "ів";
-}
-else if (convertkm.length >=2 && lastkm == 1) {
-    endkm = "";
-}
-else if ((convertkm.length >=2) && (lastkm == 2 || lastkm == 3 || lastkm == 4 )) {
-    endkm = "и";
-}
-else if ((convertkm.length >=2) && (lastkm == 5 || lastkm == 6 || lastkm == 7 || lastkm == 8 || lastkm == 9)) {
-    endkm = "ів";
-}
-else {
-    console.log ("Щось не врахувала");
+return ending;
 }
 
-console.log (metr + " " + namem + endm + " це " + km + " " + namekm + endkm);
+
+
+console.log (metr + " " + namem + lastChar(metr) + " це " + km + " " + namekm + lastChar(km));
