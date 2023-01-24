@@ -12,7 +12,7 @@
     //5,6,7.8.9.11, 12, 13, 14, 15, 16, 17, 18, 19, 0 - ів
     //дрібне - а
 
-    let metr =2563;
+    let metr =4000;
     let km = metr/1000;
     
     let namem = "метр";
@@ -46,7 +46,7 @@
     else if ((convertm.length >=2) && (lastm == 2 || lastm == 3 || lastm == 4 )) {
         endm = "и";
     }
-    else if ((convertm.length >=2) && (lastm == 5 || lastm == 6 || lastm == 7 || lastm == 8 || lastm == 9)) {
+    else if ((convertm.length >=2) && (lastm == 5 || lastm == 6 || lastm == 7 || lastm == 8 || lastm == 9 || lastm == 0)) {
         endm = "ів";
     }
     else {
@@ -74,7 +74,7 @@
     else if ((convertkm.length >=2) && (lastkm == 2 || lastkm == 3 || lastkm == 4 )) {
         endkm = "и";
     }
-    else if ((convertkm.length >=2) && (lastkm == 5 || lastkm == 6 || lastkm == 7 || lastkm == 8 || lastkm == 9)) {
+    else if ((convertkm.length >=2) && (lastkm == 5 || lastkm == 6 || lastkm == 7 || lastkm == 8 || lastkm == 9 || lastkm == 0)) {
         endkm = "ів";
     }
     else {
