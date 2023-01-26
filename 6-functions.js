@@ -42,3 +42,33 @@ console.log(MyFunc1 (1));
 //є вже стандартні написані функції
 
 console.log(Date());
+
+//callback
+
+function first() {
+    console.log ("first");
+}
+
+setTimeout(first, 5000) //затримує виклик функції на заданий час, час указується у мілісекундах
+
+console.log("123"); //у такому випадку ця функція віддасть результат першою
+
+function one() {
+    setTimeout(function(){
+        console.log ("first");
+    }),5000 
+}
+
+function two() {   
+    console.log ("second");
+}
+one(); 
+two(); 
+
+function funcWithCallBack (param1, sallbackFunc) {  //стандартний запис коллбек функції
+    console.log('Ось мій параметр: ${param1}');
+    sallbackFunc ();
+
+}
+
+
